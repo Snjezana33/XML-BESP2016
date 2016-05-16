@@ -1,17 +1,20 @@
 package gui.main.form;
 
-import gui.main.form.MyToolbar;
-
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.event.KeyEvent;
 
+import javax.swing.JButton;
+import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JPanel;
 import javax.swing.JSeparator;
 
+import net.miginfocom.swing.MigLayout;
 import actions.AboutPortecleAction;
 import actions.ChangeKeystTypeAction;
 import actions.ExamCRLAction;
@@ -41,6 +44,14 @@ public class MainFrame extends JFrame {
 	public static MainFrame instance;
 	private JMenuBar menuBar;
 	
+	private JPanel panelIncomeInfo;
+	private JPanel panel;
+	
+	private JButton t = new JButton ("T");
+    private JButton aliasName = new JButton ("Alias Name");
+    private JButton lastModified = new JButton ("Last Modified");
+	
+	
 	public MainFrame() {
 		
 		setSize(new Dimension(800,600));
@@ -50,7 +61,7 @@ public class MainFrame extends JFrame {
 		setExtendedState(NORMAL);
 		setUpMenu();
 		setJMenuBar(menuBar);
-
+	//	setPanelGUI();
 	}
 
 	private void setUpMenu() {
@@ -162,7 +173,28 @@ public class MainFrame extends JFrame {
 		MyToolbar toolbar = new MyToolbar();
 		add(toolbar, BorderLayout.NORTH);
 		
+	//}
+	
+	
+	//public void setPanelGUI(){
+		 panel = new JPanel();
+
+		 panelIncomeInfo = new JPanel (new MigLayout());
+		 panel.setLayout(new MigLayout ("wrap 1", "[grow,fill]"));
+	     panelIncomeInfo.setLayout(new MigLayout("wrap 1", "[grow,fill]"));
+		 panel.add (t,"cell 0 0");
+	     panel.add (aliasName, "cell 1 0");
+	     panel.add (lastModified, "cell 2 0");
+	     
+	     panel.add (panelIncomeInfo, "span 3, grow");
+	     panelIncomeInfo.setBackground (Color.WHITE);
+	    
+	     
+	     add (panel);
+	     pack ();
+	     setVisible (true);
 	}
+	
 	
 	public static MainFrame getInstance(){
 		if (instance==null)
