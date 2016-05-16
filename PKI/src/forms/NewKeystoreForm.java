@@ -42,6 +42,7 @@ public class NewKeystoreForm extends JFrame {
 		con.add(panel);
 		panel.setLayout(new BoxLayout(panel, BoxLayout.PAGE_AXIS));
 		panel.setVisible(true);
+		panel.setBackground(new Color(0, 0, 0));
 		
 		String text1 = "JKS";
 		JRadioButton button1 = new JRadioButton(text1);
@@ -82,6 +83,10 @@ public class NewKeystoreForm extends JFrame {
 		JLabel label = new JLabel();
 		label.setText("Select the type of the new keystore: ");
 		
+		JButton btn1 = new JButton("OK");
+		JButton btn2 = new JButton("Cancel");
+		
+		btn1.setBounds(250, 250, 200, 100);
 		
 		ButtonGroup group = new ButtonGroup();
 		group.add(button1);
@@ -101,6 +106,9 @@ public class NewKeystoreForm extends JFrame {
 		panel.add(button5);
 		panel.add(button6);
 		panel.add(button7);
+		
+		panel.add(btn1);
+		//panel.add(btn2);
 		
 		
 	}
