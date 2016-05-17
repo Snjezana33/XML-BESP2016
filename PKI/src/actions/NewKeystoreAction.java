@@ -7,6 +7,8 @@ import javax.swing.AbstractAction;
 import javax.swing.ImageIcon;
 import javax.swing.KeyStroke;
 
+import forms.NewKeystoreForm;
+
 public class NewKeystoreAction extends AbstractAction {
 
 	public NewKeystoreAction() {
@@ -19,7 +21,8 @@ public class NewKeystoreAction extends AbstractAction {
 	
 	public void actionPerformed(ActionEvent arg0) {
 		// TODO Auto-generated method stub
-		
+		NewKeystoreForm form = new NewKeystoreForm();
+		form.setVisible(true);
 	}
 	
 	
