@@ -53,6 +53,7 @@ public class NewKeystoreForm extends JFrame {
 		button1.setSelected(true);
 		//button1.setAlignmentX(CENTER_ALIGNMENT);
 
+
 		
 		final String text2 = "PKCS#12";
 		JRadioButton button2 = new JRadioButton(text2);
@@ -69,6 +70,8 @@ public class NewKeystoreForm extends JFrame {
 
 
 
+
+
 		
 		final String text4 = "JKS(case sensitive)";
 		JRadioButton button4 = new JRadioButton(text4);
@@ -76,12 +79,18 @@ public class NewKeystoreForm extends JFrame {
 		button4.setMnemonic(KeyEvent.VK_S);
 		//button4.setAlignmentX(CENTER_ALIGNMENT);
 
+
 		
 		final String text5 = "BKS";
+
+
+
 		JRadioButton button5 = new JRadioButton(text5);
 		button5.setActionCommand(text5);
 		button5.setMnemonic(KeyEvent.VK_B);
 		//button5.setAlignmentX(CENTER_ALIGNMENT);
+
+
 
 		
 		final String text6 = "BKS-V1";
