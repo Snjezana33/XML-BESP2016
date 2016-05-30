@@ -49,50 +49,77 @@ public class NewKeystoreForm extends JFrame {
 		button1.setMnemonic(KeyEvent.VK_J);
 		button1.setSelected(true);
 		//button1.setAlignmentX(CENTER_ALIGNMENT);
+<<<<<<< HEAD
 
 		
+=======
+>>>>>>> 1f7ae9a024fd6bab73ed9d1d9dd90b7c78d617cc
 		
 		String text2 = "PKCS#12";
 		JRadioButton button2 = new JRadioButton(text2);
 		button2.setActionCommand(text2);
 		button2.setMnemonic(KeyEvent.VK_P);
 		//button2.setAlignmentX(CENTER_ALIGNMENT);
+<<<<<<< HEAD
 		
+=======
+
+>>>>>>> 1f7ae9a024fd6bab73ed9d1d9dd90b7c78d617cc
 		
 		String text3 = "JCEKS";
 		JRadioButton button3 = new JRadioButton(text3);
 		button3.setActionCommand(text3);
 		button3.setMnemonic(KeyEvent.VK_C);
 		//button3.setAlignmentX(CENTER_ALIGNMENT);
+<<<<<<< HEAD
 		
+=======
+
+>>>>>>> 1f7ae9a024fd6bab73ed9d1d9dd90b7c78d617cc
 		
 		String text4 = "JKS(case sensitive)";
 		JRadioButton button4 = new JRadioButton(text4);
 		button4.setActionCommand(text4);
 		button4.setMnemonic(KeyEvent.VK_S);
 		//button4.setAlignmentX(CENTER_ALIGNMENT);
+<<<<<<< HEAD
 		
+=======
+
+>>>>>>> 1f7ae9a024fd6bab73ed9d1d9dd90b7c78d617cc
 		
 		String text5 = "BKS";
 		JRadioButton button5 = new JRadioButton(text5);
 		button5.setActionCommand(text5);
 		button5.setMnemonic(KeyEvent.VK_B);
 		//button5.setAlignmentX(CENTER_ALIGNMENT);
+<<<<<<< HEAD
 		
+=======
+
+>>>>>>> 1f7ae9a024fd6bab73ed9d1d9dd90b7c78d617cc
 		
 		String text6 = "BKS-V1";
 		JRadioButton button6 = new JRadioButton(text6);
 		button6.setActionCommand(text6);
 		button6.setMnemonic(KeyEvent.VK_1);
 		//button6.setAlignmentX(CENTER_ALIGNMENT);
+<<<<<<< HEAD
 		
+=======
+
+>>>>>>> 1f7ae9a024fd6bab73ed9d1d9dd90b7c78d617cc
 		
 		String text7 = "UBER";
 		JRadioButton button7 = new JRadioButton(text7);
 		button7.setActionCommand(text7);
 		button7.setMnemonic(KeyEvent.VK_U);
 		//button7.setAlignmentX(CENTER_ALIGNMENT);
+<<<<<<< HEAD
 		
+=======
+
+>>>>>>> 1f7ae9a024fd6bab73ed9d1d9dd90b7c78d617cc
 		
 		JLabel label = new JLabel();
 		label.setText("Select the type of the new keystore: ");
