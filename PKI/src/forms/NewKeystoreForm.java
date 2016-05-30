@@ -5,6 +5,8 @@ import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
+import java.security.KeyStore;
+import java.security.KeyStoreException;
 
 import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
@@ -18,6 +20,7 @@ import javax.swing.JRadioButton;
 public class NewKeystoreForm extends JFrame {
 	
 	public static NewKeystoreForm instance;
+	public KeyStore keystore;
 	
 	public NewKeystoreForm() {
 		
@@ -43,7 +46,7 @@ public class NewKeystoreForm extends JFrame {
 		//panel.setBackground(new Color(0, 0, 0));
 		//panel.setPreferredSize(new Dimension(250, 300));
 		
-		String text1 = "JKS";
+		final String text1 = "JKS";
 		JRadioButton button1 = new JRadioButton(text1);
 		button1.setActionCommand(text1);
 		button1.setMnemonic(KeyEvent.VK_J);
@@ -51,48 +54,49 @@ public class NewKeystoreForm extends JFrame {
 		//button1.setAlignmentX(CENTER_ALIGNMENT);
 
 		
-		
-		String text2 = "PKCS#12";
+		final String text2 = "PKCS#12";
 		JRadioButton button2 = new JRadioButton(text2);
 		button2.setActionCommand(text2);
 		button2.setMnemonic(KeyEvent.VK_P);
 		//button2.setAlignmentX(CENTER_ALIGNMENT);
+
 		
-		
-		String text3 = "JCEKS";
+		final String text3 = "JCEKS";
 		JRadioButton button3 = new JRadioButton(text3);
 		button3.setActionCommand(text3);
 		button3.setMnemonic(KeyEvent.VK_C);
 		//button3.setAlignmentX(CENTER_ALIGNMENT);
+
+
+
 		
-		
-		String text4 = "JKS(case sensitive)";
+		final String text4 = "JKS(case sensitive)";
 		JRadioButton button4 = new JRadioButton(text4);
 		button4.setActionCommand(text4);
 		button4.setMnemonic(KeyEvent.VK_S);
 		//button4.setAlignmentX(CENTER_ALIGNMENT);
+
 		
-		
-		String text5 = "BKS";
+		final String text5 = "BKS";
 		JRadioButton button5 = new JRadioButton(text5);
 		button5.setActionCommand(text5);
 		button5.setMnemonic(KeyEvent.VK_B);
 		//button5.setAlignmentX(CENTER_ALIGNMENT);
+
 		
-		
-		String text6 = "BKS-V1";
+		final String text6 = "BKS-V1";
 		JRadioButton button6 = new JRadioButton(text6);
 		button6.setActionCommand(text6);
 		button6.setMnemonic(KeyEvent.VK_1);
 		//button6.setAlignmentX(CENTER_ALIGNMENT);
+
 		
-		
-		String text7 = "UBER";
+		final String text7 = "UBER";
 		JRadioButton button7 = new JRadioButton(text7);
 		button7.setActionCommand(text7);
 		button7.setMnemonic(KeyEvent.VK_U);
 		//button7.setAlignmentX(CENTER_ALIGNMENT);
-		
+
 		
 		JLabel label = new JLabel();
 		label.setText("Select the type of the new keystore: ");
@@ -148,6 +152,15 @@ public class NewKeystoreForm extends JFrame {
             btn1.addActionListener(new ActionListener(){
             	public void actionPerformed(ActionEvent e){
             		System.out.println("ok");
+            		try {
+						keystore.getInstance(text1);
+					} catch (KeyStoreException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+            	   // keystore.getProvider();
+            	  //  keystore.getType();
+            	    
             	}
             });
             	
@@ -171,6 +184,12 @@ public class NewKeystoreForm extends JFrame {
             btn1.addActionListener(new ActionListener(){
             	public void actionPerformed(ActionEvent e){
             		System.out.println("ok");
+            		try {
+						keystore.getInstance(text2);
+					} catch (KeyStoreException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
             	}
             });
             	
@@ -193,6 +212,12 @@ public class NewKeystoreForm extends JFrame {
             btn1.addActionListener(new ActionListener(){
             	public void actionPerformed(ActionEvent e){
             		System.out.println("ok");
+            		try {
+						keystore.getInstance(text3);
+					} catch (KeyStoreException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
             	}
             });
             	
@@ -215,6 +240,12 @@ public class NewKeystoreForm extends JFrame {
             btn1.addActionListener(new ActionListener(){
             	public void actionPerformed(ActionEvent e){
             		System.out.println("ok");
+            		try {
+						keystore.getInstance(text4);
+					} catch (KeyStoreException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
             	}
             });
             	
@@ -237,6 +268,12 @@ public class NewKeystoreForm extends JFrame {
             btn1.addActionListener(new ActionListener(){
             	public void actionPerformed(ActionEvent e){
             		System.out.println("ok");
+            		try {
+						keystore.getInstance(text5);
+					} catch (KeyStoreException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
             	}
             });
             	
@@ -260,6 +297,12 @@ public class NewKeystoreForm extends JFrame {
             btn1.addActionListener(new ActionListener(){
             	public void actionPerformed(ActionEvent e){
             		System.out.println("ok");
+            		try {
+						keystore.getInstance(text6);
+					} catch (KeyStoreException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
             	}
             });
             	
@@ -283,6 +326,12 @@ public class NewKeystoreForm extends JFrame {
             btn1.addActionListener(new ActionListener(){
             	public void actionPerformed(ActionEvent e){
             		System.out.println("ok");
+            		try {
+						keystore.getInstance(text7);
+					} catch (KeyStoreException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
             	}
             });
             	
