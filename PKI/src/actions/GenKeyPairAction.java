@@ -6,8 +6,10 @@ import java.awt.event.KeyEvent;
 import javax.swing.AbstractAction;
 import javax.swing.KeyStroke;
 
+import forms.AliasForm;
 import forms.GenerateCertificateForm;
 import forms.GenerateKeyPairForm;
+import forms.PasswordForm;
 
 public class GenKeyPairAction extends AbstractAction {
 
@@ -25,7 +27,13 @@ public class GenKeyPairAction extends AbstractAction {
 //		GenerateKeyPairForm form = new GenerateKeyPairForm();
 //		form.setVisible(true);
 		
-		GenerateCertificateForm form = new GenerateCertificateForm();
+//		GenerateCertificateForm form = new GenerateCertificateForm();
+//		form.setVisible(true);
+		
+//		AliasForm form = new AliasForm();
+//		form.setVisible(true);
+		
+		PasswordForm form = new PasswordForm();
 		form.setVisible(true);
 		
 		
