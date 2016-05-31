@@ -11,10 +11,9 @@ import javax.swing.JTextField;
 
 public class AliasForm extends JFrame {
 	
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = -3649570825540931925L;
+
 	public static AliasForm instance;
 	
 	public AliasForm() {

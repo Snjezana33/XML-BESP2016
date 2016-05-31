@@ -3,7 +3,10 @@ package forms;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
-
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.LayoutManager;
+import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
@@ -17,10 +20,9 @@ import javax.swing.border.EmptyBorder;
 
 public class GenerateCertificateForm extends JFrame {
 	
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = 4915449893971490741L;
+
 	public static GenerateCertificateForm instance;
 	
 	public GenerateCertificateForm() {
