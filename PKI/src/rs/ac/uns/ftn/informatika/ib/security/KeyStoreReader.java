@@ -21,15 +21,15 @@ public class KeyStoreReader {
 
 	private static final String KEY_STORE_FILE = "./data/marija.jks";
 	
-	private char[] password = "test10".toCharArray();
-	private char[] keyPass  = "marija1".toCharArray();
+	private static char[] password = "test10".toCharArray();
+	private static char[] keyPass  = "marija1".toCharArray();
 	
 	
 	public void testIt() {
 		readKeyStore();
 	}
 	
-	private void readKeyStore(){
+	public static void readKeyStore(){
 		try {
 			//kreiramo instancu KeyStore
 			KeyStore ks = KeyStore.getInstance("JKS", "SUN");

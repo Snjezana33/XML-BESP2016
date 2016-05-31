@@ -21,7 +21,7 @@ import org.bouncycastle.asn1.x500.style.BCStyle;
 
 public class KeyStoreWriter {
 	
-	private KeyStore keyStore;
+	private static KeyStore keyStore;
 	
 	public KeyStoreWriter() {
 		try {
@@ -31,7 +31,7 @@ public class KeyStoreWriter {
 		}
 	}
 	
-	public void loadKeyStore(String fileName, char[] password) {
+	public static void loadKeyStore(String fileName, char[] password) {
 		try {
 			if(fileName != null) 
 				keyStore.load(new FileInputStream(fileName), password);

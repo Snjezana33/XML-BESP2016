@@ -1,12 +1,10 @@
 package gui.main.form;
 
 import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.event.KeyEvent;
 
 import javax.swing.JButton;
-import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
@@ -14,7 +12,6 @@ import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.JSeparator;
 
-//import net.miginfocom.swing.MigLayout;
 import actions.AboutPortecleAction;
 import actions.ChangeKeystTypeAction;
 import actions.ExamCRLAction;
@@ -39,8 +36,14 @@ import actions.SecurityProvidersAction;
 import actions.SetKeystPassAction;
 import actions.WebsiteAction;
 
+
+
 public class MainFrame extends JFrame {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 957736202283765148L;
 	public static MainFrame instance;
 	private JMenuBar menuBar;
 	
@@ -201,6 +204,46 @@ public class MainFrame extends JFrame {
 			instance=new MainFrame();
 		return instance;
 
+	}
+
+	public JPanel getPanelIncomeInfo() {
+		return panelIncomeInfo;
+	}
+
+	public void setPanelIncomeInfo(JPanel panelIncomeInfo) {
+		this.panelIncomeInfo = panelIncomeInfo;
+	}
+
+	public JPanel getPanel() {
+		return panel;
+	}
+
+	public void setPanel(JPanel panel) {
+		this.panel = panel;
+	}
+
+	public JButton getT() {
+		return t;
+	}
+
+	public void setT(JButton t) {
+		this.t = t;
+	}
+
+	public JButton getAliasName() {
+		return aliasName;
+	}
+
+	public void setAliasName(JButton aliasName) {
+		this.aliasName = aliasName;
+	}
+
+	public JButton getLastModified() {
+		return lastModified;
+	}
+
+	public void setLastModified(JButton lastModified) {
+		this.lastModified = lastModified;
 	}
 
 }
