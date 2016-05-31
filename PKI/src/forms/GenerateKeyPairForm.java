@@ -1,16 +1,25 @@
 package forms;
 
+<<<<<<< HEAD
+=======
+import java.awt.BorderLayout;
+>>>>>>> bc552d1afa288b7d161ead30044c4167aede56ab
 import java.awt.Container;
 import java.awt.Dimension;
 
 import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
+<<<<<<< HEAD
+=======
+import javax.swing.GroupLayout;
+>>>>>>> bc552d1afa288b7d161ead30044c4167aede56ab
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
+<<<<<<< HEAD
 
 public class GenerateKeyPairForm extends JFrame {
 	
@@ -18,6 +27,12 @@ public class GenerateKeyPairForm extends JFrame {
 	 * 
 	 */
 	private static final long serialVersionUID = -572497822506860145L;
+=======
+import javax.swing.UIManager;
+
+public class GenerateKeyPairForm extends JFrame {
+	
+>>>>>>> bc552d1afa288b7d161ead30044c4167aede56ab
 	public static GenerateKeyPairForm instance;
 	
 	public GenerateKeyPairForm() {
