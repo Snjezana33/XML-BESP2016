@@ -3,40 +3,31 @@ package forms;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
-<<<<<<< HEAD
 
-=======
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.LayoutManager;
 
 import javax.swing.BoxLayout;
->>>>>>> bc552d1afa288b7d161ead30044c4167aede56ab
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-<<<<<<< HEAD
 import javax.swing.border.EmptyBorder;
-
-
-
-
-public class GenerateCertificateForm extends JFrame {
-	
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 4915449893971490741L;
-=======
 import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
 
+
+
+
+	
+
 public class GenerateCertificateForm extends JFrame {
 	
->>>>>>> bc552d1afa288b7d161ead30044c4167aede56ab
+	private static final long serialVersionUID = 4915449893971490741L;
+	
 	public static GenerateCertificateForm instance;
 	
 	public GenerateCertificateForm() {

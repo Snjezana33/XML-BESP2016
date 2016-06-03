@@ -11,13 +11,9 @@ import javax.swing.JTextField;
 
 public class PasswordForm extends JFrame {
 	
-<<<<<<< HEAD
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 6757683992968685951L;
-=======
->>>>>>> bc552d1afa288b7d161ead30044c4167aede56ab
+
 	public static PasswordForm instance;
 	
 	public PasswordForm() {
