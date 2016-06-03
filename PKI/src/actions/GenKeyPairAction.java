@@ -7,6 +7,7 @@ import javax.swing.AbstractAction;
 import javax.swing.KeyStroke;
 
 import forms.AliasForm;
+import forms.ExportForm;
 import forms.GenerateCertificateForm;
 import forms.GenerateKeyPairForm;
 import forms.PasswordForm;
@@ -35,6 +36,9 @@ public class GenKeyPairAction extends AbstractAction {
 		
 	//	PasswordForm form = new PasswordForm();
 	//	form.setVisible(true);
+		
+//		ExportForm form = new ExportForm();
+//		form.setVisible(true);
 		
 		
 	}

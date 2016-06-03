@@ -3,6 +3,10 @@ package forms;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+<<<<<<< HEAD
+=======
+
+>>>>>>> d91c7f7cf18bd447811366aae600108ec4290940
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.LayoutManager;
@@ -14,15 +18,27 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
+<<<<<<< HEAD
+=======
+import javax.swing.UIManager;
+import javax.swing.border.EmptyBorder;
+
+>>>>>>> d91c7f7cf18bd447811366aae600108ec4290940
 
 
 
+	
 
 public class GenerateCertificateForm extends JFrame {
 	
+<<<<<<< HEAD
 	
 	private static final long serialVersionUID = 4915449893971490741L;
 
+=======
+	private static final long serialVersionUID = 4915449893971490741L;
+	
+>>>>>>> d91c7f7cf18bd447811366aae600108ec4290940
 	public static GenerateCertificateForm instance;
 	
 	public GenerateCertificateForm() {

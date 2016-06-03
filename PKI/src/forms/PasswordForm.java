@@ -20,7 +20,7 @@ public class PasswordForm extends JFrame {
 		
 		setSize(new Dimension(350,130));
 		setLocationRelativeTo(null);
-		setTitle("Generate Key Pair");
+		setTitle("Key Pair Entry Password");
 		//setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setExtendedState(NORMAL);
 		setResizable(false);
