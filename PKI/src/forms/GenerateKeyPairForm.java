@@ -1,5 +1,7 @@
 package forms;
 
+
+import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.ItemSelectable;
@@ -12,17 +14,21 @@ import java.security.KeyStoreException;
 
 import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
+import javax.swing.GroupLayout;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
-
 import rs.ac.uns.ftn.informatika.ib.security.KeyStoreReader;
 import rs.ac.uns.ftn.informatika.ib.security.KeyStoreWriter;
 
+
+
+
 public class GenerateKeyPairForm extends JFrame {
+	
 
 	private static final long serialVersionUID = -572497822506860145L;
 
