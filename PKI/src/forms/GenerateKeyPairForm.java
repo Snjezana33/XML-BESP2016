@@ -1,15 +1,8 @@
 package forms;
 
-<<<<<<< HEAD
+import java.awt.BorderLayout;
 
 import java.awt.BorderLayout;
-=======
-<<<<<<< HEAD
-=======
-
-import java.awt.BorderLayout;
->>>>>>> d91c7f7cf18bd447811366aae600108ec4290940
->>>>>>> 529ef1e7b048304c65d6e2e808aed30bb395115b
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.ItemSelectable;
@@ -22,49 +15,26 @@ import java.security.KeyStoreException;
 
 import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
-<<<<<<< HEAD
 import javax.swing.GroupLayout;
-=======
-<<<<<<< HEAD
-=======
 
 import javax.swing.GroupLayout;
->>>>>>> d91c7f7cf18bd447811366aae600108ec4290940
->>>>>>> 529ef1e7b048304c65d6e2e808aed30bb395115b
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
-<<<<<<< HEAD
 import rs.ac.uns.ftn.informatika.ib.security.KeyStoreReader;
 import rs.ac.uns.ftn.informatika.ib.security.KeyStoreWriter;
 
-=======
-<<<<<<< HEAD
->>>>>>> 529ef1e7b048304c65d6e2e808aed30bb395115b
-
 import rs.ac.uns.ftn.informatika.ib.security.KeyStoreReader;
 import rs.ac.uns.ftn.informatika.ib.security.KeyStoreWriter;
-
-<<<<<<< HEAD
-
-public class GenerateKeyPairForm extends JFrame {
-	
-
-=======
-public class GenerateKeyPairForm extends JFrame {
-
-=======
 import javax.swing.UIManager;
 
 
 
 public class GenerateKeyPairForm extends JFrame {
-	
->>>>>>> d91c7f7cf18bd447811366aae600108ec4290940
->>>>>>> 529ef1e7b048304c65d6e2e808aed30bb395115b
+
 	private static final long serialVersionUID = -572497822506860145L;
 
 	public static GenerateKeyPairForm instance;
