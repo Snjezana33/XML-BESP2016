@@ -14,10 +14,13 @@ import forms.PasswordForm;
 
 public class OkAction extends AbstractAction {
 
+
 	private JFrame standardForm;
 	private JButton btnOk;
 
-	public OkAction(JFrame standardForm) {
+	
+	public OkAction(JFrame standardForm){
+
 		putValue(NAME, "OK");
 		this.standardForm = standardForm;
 	}
@@ -47,6 +50,16 @@ public class OkAction extends AbstractAction {
 		else if (standardForm instanceof PasswordForm) {
 
 			standardForm.setVisible(false);
+
+		// TODO Auto-generated method stub
+		
+		if(standardForm instanceof GenerateKeyPairForm){
+			
+		}
+		
+		if(standardForm instanceof GenerateCertificateForm){
+			
+		}
 
 			new GenerateCertificateSucess().setVisible(true);
 		}

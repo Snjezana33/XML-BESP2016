@@ -19,6 +19,11 @@ import javax.swing.JRadioButton;
 import actions.CancelAction;
 import actions.OkAction;
 
+import org.bouncycastle.asn1.x500.X500NameBuilder;
+import org.bouncycastle.asn1.x500.style.BCStyle;
+
+import actions.CancelAction;
+import actions.OkAction;
 
 
 public class GenerateKeyPairForm extends JFrame{
@@ -142,8 +147,9 @@ public class GenerateKeyPairForm extends JFrame{
 						try {
 							KeyStore.getInstance(textRSA);
 							System.out.println(KeyStore.getInstance(textRSA));
-							//setVisible(false);
-							//new GenerateCertificateForm().setVisible(true);
+							setVisible(false);
+							new GenerateCertificateForm().dispose();
+
 							
 							
 						} catch (KeyStoreException e1) {
@@ -158,7 +164,7 @@ public class GenerateKeyPairForm extends JFrame{
 		});
 		
 		
-//	btnOk.addActionListener(new A)
+
 
 	/*	ItemListener itemListener = new ItemListener() {
 			public void itemStateChanged(ItemEvent itemEvent) {

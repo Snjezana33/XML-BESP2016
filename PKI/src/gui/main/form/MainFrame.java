@@ -12,6 +12,7 @@ import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.JSeparator;
 import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
 
 import actions.AboutPortecleAction;
@@ -181,11 +182,13 @@ public class MainFrame extends JFrame {
 		MyToolbar toolbar = new MyToolbar();
 		add(toolbar, BorderLayout.NORTH);
 		
-		JTable table= new JTable();
-		table.addColumn(T);
-		table.addColumn(alias);
-		table.addColumn(modified);
-		add(table);
+		String column_names[]= {"T","Alias Name","Last Modified"};
+		DefaultTableModel table_model=new DefaultTableModel(column_names,3);
+		JTable table=new JTable(table_model);
+		add(table.getTableHeader(), BorderLayout.NORTH);
+		add(table, BorderLayout.CENTER);
+		
+		
 	}
 	
 	
