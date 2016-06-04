@@ -30,7 +30,7 @@ public class GenerateCertificateForm extends JFrame {
 		
 		setSize(new Dimension(340,350));
 		setLocationRelativeTo(null);
-		setTitle("Generate Key Pair");
+		setTitle("Generate Certificate Form");
 		//setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setExtendedState(NORMAL);
 		setResizable(false);

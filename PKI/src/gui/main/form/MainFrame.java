@@ -11,6 +11,8 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.JSeparator;
+import javax.swing.JTable;
+import javax.swing.table.TableColumn;
 
 import actions.AboutPortecleAction;
 import actions.ChangeKeystTypeAction;
@@ -54,6 +56,9 @@ public class MainFrame extends JFrame {
     private JButton aliasName = new JButton ("Alias Name");
     private JButton lastModified = new JButton ("Last Modified");
 	
+	private TableColumn T= new TableColumn();
+	private TableColumn alias= new TableColumn();
+	private TableColumn modified=new TableColumn();
 	
 	public MainFrame() {
 		
@@ -176,6 +181,11 @@ public class MainFrame extends JFrame {
 		MyToolbar toolbar = new MyToolbar();
 		add(toolbar, BorderLayout.NORTH);
 		
+		JTable table= new JTable();
+		table.addColumn(T);
+		table.addColumn(alias);
+		table.addColumn(modified);
+		add(table);
 	}
 	
 	

@@ -27,7 +27,11 @@ public class GenKeyPairAction extends AbstractAction {
 		// TODO Auto-generated method stub
 	GenerateKeyPairForm form = new GenerateKeyPairForm();
 	form.setVisible(true);
-		
+	
+	
+	
+	
+	
 //		GenerateCertificateForm form = new GenerateCertificateForm();
 //		form.setVisible(true);
 		
