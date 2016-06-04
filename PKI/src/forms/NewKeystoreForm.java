@@ -16,6 +16,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 
+import actions.CancelAction;
+
 import rs.ac.uns.ftn.informatika.ib.security.KeyStoreReader;
 import rs.ac.uns.ftn.informatika.ib.security.KeyStoreWriter;
 
@@ -98,7 +100,7 @@ public class NewKeystoreForm extends JFrame {
 		// label.setAlignmentX(LEFT_ALIGNMENT);
 
 		final JButton btn1 = new JButton("OK");
-		final JButton btn2 = new JButton("Cancel");
+		final JButton btn2 = new JButton(new CancelAction(this));
 
 		// btn1.setBounds(250, 250, 200, 100);
 
@@ -137,14 +139,16 @@ public class NewKeystoreForm extends JFrame {
 
 			public void actionPerformed(ActionEvent e) {
 				// Execute when button is pressed
-				System.out.println("You clicked the button");
+				//System.out.println("You clicked the button");
 				btn1.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
-						System.out.println("ok");
+						//System.out.println("ok");
 						try {
 							KeyStore.getInstance(text1);
+							System.out.println(KeyStore.getInstance(text1));
 							KeyStoreReader.readKeyStore();
 							KeyStoreWriter.loadKeyStore("./data/marija.jks", null);
+							
 							
 						} catch (KeyStoreException e1) {
 							// TODO Auto-generated catch block
@@ -154,201 +158,150 @@ public class NewKeystoreForm extends JFrame {
 					}
 				});
 
-				btn2.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						System.out.println("Cancel");
-						/* zatvori formu */
-						setVisible(false);
-					}
-				});
-
 			}
 
 		});
 
-		button2.addActionListener(new ActionListener() {
-
-			public void actionPerformed(ActionEvent e) {
-				// Execute when button is pressed
-				System.out.println("You clicked the button");
-				btn1.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						System.out.println("ok");
-						try {
-							KeyStore.getInstance(text2);
-							KeyStoreReader.readKeyStore();
-							KeyStoreWriter.loadKeyStore("./data/marija.jks", null);
-							
-						} catch (KeyStoreException e1) {
-							// TODO Auto-generated catch block
-							e1.printStackTrace();
-						}
-						KeyStoreReader.readKeyStore();
-					}
-				});
-
-				btn2.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						System.out.println("Cancel");
-						setVisible(false);
-					}
-				});
-
-			}
-
-		});
-		button3.addActionListener(new ActionListener() {
-
-			public void actionPerformed(ActionEvent e) {
-				// Execute when button is pressed
-				System.out.println("You clicked the button");
-				btn1.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						System.out.println("ok");
-						try {
-							KeyStore.getInstance(text3);
-							KeyStoreReader.readKeyStore();
-							KeyStoreWriter.loadKeyStore("./data/marija.jks", null);
-							
-						} catch (KeyStoreException e1) {
-							// TODO Auto-generated catch block
-							e1.printStackTrace();
-						}
-						// System.out.println(keystore.getInstance(text3));
-						KeyStoreReader.readKeyStore();
-					}
-				});
-
-				btn2.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						System.out.println("Cancel");
-						setVisible(false);
-					}
-				});
-
-			}
-
-		});
-		button4.addActionListener(new ActionListener() {
-
-			public void actionPerformed(ActionEvent e) {
-				// Execute when button is pressed
-				System.out.println("You clicked the button");
-				btn1.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						System.out.println("ok");
-						try {
-							KeyStore.getInstance(text4);
-							KeyStoreReader.readKeyStore();
-							KeyStoreWriter.loadKeyStore("./data/marija.jks", null);
-						} catch (KeyStoreException e1) {
-							// TODO Auto-generated catch block
-							e1.printStackTrace();
-						}
-						
-					}
-				});
-
-				btn2.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						System.out.println("Cancel");
-						setVisible(false);
-					}
-				});
-
-			}
-
-		});
-		button5.addActionListener(new ActionListener() {
-
-			public void actionPerformed(ActionEvent e) {
-				// Execute when button is pressed
-				System.out.println("You clicked the button");
-				btn1.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						System.out.println("ok");
-						try {
-							KeyStore.getInstance(text5);
-							KeyStoreReader.readKeyStore();
-							KeyStoreWriter.loadKeyStore("./data/marija.jks", null);
-						} catch (KeyStoreException e1) {
-							// TODO Auto-generated catch block
-							e1.printStackTrace();
-						}
-					}
-				});
-
-				btn2.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						System.out.println("Cancel");
-						setVisible(false);
-					}
-				});
-
-			}
-
-		});
-
-		button6.addActionListener(new ActionListener() {
-
-			public void actionPerformed(ActionEvent e) {
-				// Execute when button is pressed
-				System.out.println("You clicked the button");
-				btn1.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						System.out.println("ok");
-						try {
-							KeyStore.getInstance(text6);
-							KeyStoreReader.readKeyStore();
-							KeyStoreWriter.loadKeyStore("./data/marija.jks", null);
-						} catch (KeyStoreException e1) {
-							// TODO Auto-generated catch block
-							e1.printStackTrace();
-						}
-					}
-				});
-
-				btn2.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						System.out.println("Cancel");
-						setVisible(false);
-					}
-				});
-
-			}
-
-		});
-
-		button7.addActionListener(new ActionListener() {
-
-			public void actionPerformed(ActionEvent e) {
-				// Execute when button is pressed
-				System.out.println("You clicked the button");
-				btn1.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						System.out.println("ok");
-						try {
-							KeyStore.getInstance(text7);
-							KeyStoreReader.readKeyStore();
-							KeyStoreWriter.loadKeyStore("./data/marija.jks", null);
-							
-						} catch (KeyStoreException e1) {
-							// TODO Auto-generated catch block
-							e1.printStackTrace();
-						}
-					}
-				});
-
-				btn2.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						System.out.println("Cancel");
-						setVisible(false);
-					}
-				});
-
-			}
-
-		});
+//		button2.addActionListener(new ActionListener() {
+//
+//			public void actionPerformed(ActionEvent e) {
+//				// Execute when button is pressed
+//				System.out.println("You clicked the button");
+//				btn1.addActionListener(new ActionListener() {
+//					public void actionPerformed(ActionEvent e) {
+//						System.out.println("ok");
+//						try {
+//							KeyStore.getInstance(text2);
+//							KeyStoreReader.readKeyStore();
+//							KeyStoreWriter.loadKeyStore("./data/marija.jks", null);
+//							
+//						} catch (KeyStoreException e1) {
+//							// TODO Auto-generated catch block
+//							e1.printStackTrace();
+//						}
+//						KeyStoreReader.readKeyStore();
+//					}
+//				});
+//
+//			}
+//
+//		});
+//		button3.addActionListener(new ActionListener() {
+//
+//			public void actionPerformed(ActionEvent e) {
+//				// Execute when button is pressed
+//				System.out.println("You clicked the button");
+//				btn1.addActionListener(new ActionListener() {
+//					public void actionPerformed(ActionEvent e) {
+//						System.out.println("ok");
+//						try {
+//							KeyStore.getInstance(text3);
+//							KeyStoreReader.readKeyStore();
+//							KeyStoreWriter.loadKeyStore("./data/marija.jks", null);
+//							
+//						} catch (KeyStoreException e1) {
+//							// TODO Auto-generated catch block
+//							e1.printStackTrace();
+//						}
+//						// System.out.println(keystore.getInstance(text3));
+//						KeyStoreReader.readKeyStore();
+//					}
+//				});
+//
+//			}
+//
+//		});
+//		button4.addActionListener(new ActionListener() {
+//
+//			public void actionPerformed(ActionEvent e) {
+//				// Execute when button is pressed
+//				System.out.println("You clicked the button");
+//				btn1.addActionListener(new ActionListener() {
+//					public void actionPerformed(ActionEvent e) {
+//						System.out.println("ok");
+//						try {
+//							KeyStore.getInstance(text4);
+//							KeyStoreReader.readKeyStore();
+//							KeyStoreWriter.loadKeyStore("./data/marija.jks", null);
+//						} catch (KeyStoreException e1) {
+//							// TODO Auto-generated catch block
+//							e1.printStackTrace();
+//						}
+//						
+//					}
+//				});
+//
+//			}
+//
+//		});
+//		button5.addActionListener(new ActionListener() {
+//
+//			public void actionPerformed(ActionEvent e) {
+//				// Execute when button is pressed
+//				System.out.println("You clicked the button");
+//				btn1.addActionListener(new ActionListener() {
+//					public void actionPerformed(ActionEvent e) {
+//						System.out.println("ok");
+//						try {
+//							KeyStore.getInstance(text5);
+//							KeyStoreReader.readKeyStore();
+//							KeyStoreWriter.loadKeyStore("./data/marija.jks", null);
+//						} catch (KeyStoreException e1) {
+//							// TODO Auto-generated catch block
+//							e1.printStackTrace();
+//						}
+//					}
+//				});
+//
+//			}
+//
+//		});
+//
+//		button6.addActionListener(new ActionListener() {
+//
+//			public void actionPerformed(ActionEvent e) {
+//				// Execute when button is pressed
+//				System.out.println("You clicked the button");
+//				btn1.addActionListener(new ActionListener() {
+//					public void actionPerformed(ActionEvent e) {
+//						System.out.println("ok");
+//						try {
+//							KeyStore.getInstance(text6);
+//							KeyStoreReader.readKeyStore();
+//							KeyStoreWriter.loadKeyStore("./data/marija.jks", null);
+//						} catch (KeyStoreException e1) {
+//							// TODO Auto-generated catch block
+//							e1.printStackTrace();
+//						}
+//					}
+//				});
+//
+//			}
+//
+//		});
+//
+//		button7.addActionListener(new ActionListener() {
+//
+//			public void actionPerformed(ActionEvent e) {
+//				// Execute when button is pressed
+//				System.out.println("You clicked the button");
+//				btn1.addActionListener(new ActionListener() {
+//					public void actionPerformed(ActionEvent e) {
+//						System.out.println("ok");
+//						try {
+//							KeyStore.getInstance(text7);
+//							KeyStoreReader.readKeyStore();
+//							KeyStoreWriter.loadKeyStore("./data/marija.jks", null);
+//							
+//						} catch (KeyStoreException e1) {
+//							// TODO Auto-generated catch block
+//							e1.printStackTrace();
+//						}
+//					}
+//				});
+//			}
+//
+//		});
 
 	}
 

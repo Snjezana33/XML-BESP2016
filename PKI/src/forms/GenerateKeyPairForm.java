@@ -31,13 +31,21 @@ import rs.ac.uns.ftn.informatika.ib.security.KeyStoreReader;
 import rs.ac.uns.ftn.informatika.ib.security.KeyStoreWriter;
 import javax.swing.UIManager;
 
+import org.bouncycastle.asn1.x500.X500NameBuilder;
+import org.bouncycastle.asn1.x500.style.BCStyle;
+
+import actions.CancelAction;
+import actions.OkAction;
 
 
-public class GenerateKeyPairForm extends JFrame {
+
+public class GenerateKeyPairForm extends JFrame{
 
 	private static final long serialVersionUID = -572497822506860145L;
 
 	public static GenerateKeyPairForm instance;
+	
+	private JButton btnOk;
 
 	public GenerateKeyPairForm() {
 
@@ -85,7 +93,7 @@ public class GenerateKeyPairForm extends JFrame {
 		JLabel label2 = new JLabel();
 		label2.setText("Key size: ");
 
-		JComboBox<Integer> size = new JComboBox<Integer>();
+		final JComboBox<Integer> size = new JComboBox<Integer>();
 		size.addItem(4096);
 		size.addItem(2048);
 		size.addItem(1024);
@@ -101,9 +109,9 @@ public class GenerateKeyPairForm extends JFrame {
 		panel2.add(size);
 
 		panel.add(panel2);
-
-		final JButton btnOk = new JButton("OK");
-		final JButton btnCancel = new JButton("Cancel");
+		
+		btnOk = new JButton(new OkAction(this));
+		JButton btnCancel = new JButton(new CancelAction(this));
 
 		JPanel panel3 = new JPanel();
 		panel3.add(btnOk);
@@ -136,15 +144,6 @@ public class GenerateKeyPairForm extends JFrame {
 
 					}
 				});
-
-				btnCancel.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						System.out.println("Cancel");
-						/* zatvori formu */
-						setVisible(false);
-					}
-				});
-
 			}
 
 		});
@@ -153,16 +152,17 @@ public class GenerateKeyPairForm extends JFrame {
 
 			public void actionPerformed(ActionEvent e) {
 				// Execute when button is pressed
-				System.out.println("You clicked the button");
+				//System.out.println("You clicked the button");
 				btnOk.addActionListener(new ActionListener() {
 					@SuppressWarnings("deprecation")
 					public void actionPerformed(ActionEvent e) {
-						System.out.println("ok");
+						//System.out.println("ok");
 						try {
 							KeyStore.getInstance(textRSA);
-							
+							System.out.println(KeyStore.getInstance(textRSA));
 							setVisible(false);
 							new GenerateCertificateForm().dispose();
+							
 							
 						} catch (KeyStoreException e1) {
 							// TODO Auto-generated catch block
@@ -171,18 +171,12 @@ public class GenerateKeyPairForm extends JFrame {
 
 					}
 				});
-
-				btnCancel.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						System.out.println("Cancel");
-						/* zatvori formu */
-						setVisible(false);
-					}
-				});
-
 			}
 
 		});
+		
+		
+//		btnOk.addActionListener(new A)
 
 	/*	ItemListener itemListener = new ItemListener() {
 			public void itemStateChanged(ItemEvent itemEvent) {
@@ -198,8 +192,6 @@ public class GenerateKeyPairForm extends JFrame {
 		
 		
 	     // JComboBox comboBox = new JComboBox(names);
-	        size.setEditable(true);
-
 	        //
 	        // Create an ActionListener for the JComboBox component.
 	        //
