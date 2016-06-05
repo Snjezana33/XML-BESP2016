@@ -146,12 +146,9 @@ public class GenerateKeyPairForm extends JFrame{
 						//System.out.println("ok");
 						try {
 							KeyStore.getInstance(textRSA);
-							System.out.println(KeyStore.getInstance(textRSA));
-							setVisible(false);
-							new GenerateCertificateForm().dispose();
 
-							
-							
+							setVisible(false);
+							new GenerateCertificateForm().setVisible(true);			
 						} catch (KeyStoreException e1) {
 							// TODO Auto-generated catch block
 							e1.printStackTrace();
@@ -164,6 +161,9 @@ public class GenerateKeyPairForm extends JFrame{
 		});
 		
 		
+
+
+//	btnOk.addActionListener(new A)
 
 
 	/*	ItemListener itemListener = new ItemListener() {

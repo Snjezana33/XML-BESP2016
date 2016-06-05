@@ -3,6 +3,8 @@ package forms;
 import java.awt.Button;
 import java.awt.Container;
 import java.awt.Dimension;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
@@ -20,7 +22,7 @@ public class ExportForm extends JFrame {
 		
 		setSize(new Dimension(270,300));
 		setLocationRelativeTo(null);
-		setTitle("Generate Key Pair");
+		setTitle("Export Form");
 		//setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setExtendedState(NORMAL);
 		setResizable(false);
@@ -111,6 +113,29 @@ public class ExportForm extends JFrame {
 		panelBtn.add(btnCancel);
 		
 		panel.add(panelBtn);
+		
+		btnOk.addActionListener(new ActionListener() {
+			@SuppressWarnings("deprecation")
+			public void actionPerformed(ActionEvent e) {
+				
+					setVisible(false);
+					//new GenerateCertificateSucess().setVisible(true);		
+			
+
+			}
+		});
+
+		btnCancel.addActionListener(new ActionListener() {
+			@SuppressWarnings("deprecation")
+			public void actionPerformed(ActionEvent e) {
+				
+					setVisible(false);
+								
+			
+
+			}
+		});
+
 	}
 
 

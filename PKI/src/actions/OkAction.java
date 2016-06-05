@@ -3,21 +3,38 @@ package actions;
 import java.awt.event.ActionEvent;
 
 import javax.swing.AbstractAction;
+
+import javax.swing.JButton;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
 import forms.AliasForm;
 import forms.GenerateCertificateForm;
 import forms.GenerateCertificateSucess;
+
+import javax.swing.JDialog;
+
+import javax.swing.JFrame;
+
+import forms.GenerateCertificateForm;
+
+import forms.GenerateCertificateSucess;
+
+
 import forms.GenerateKeyPairForm;
 import forms.PasswordForm;
 
 public class OkAction extends AbstractAction {
 
 
+
 	private JFrame standardForm;
 	private JButton btnOk;
 
+
+	
+	
 	
 	public OkAction(JFrame standardForm){
 
@@ -26,6 +43,8 @@ public class OkAction extends AbstractAction {
 	}
 
 	public void actionPerformed(ActionEvent arg0) {
+
+
 		standardForm.setVisible(false);
 
 		if (standardForm instanceof GenerateKeyPairForm) {
@@ -50,16 +69,6 @@ public class OkAction extends AbstractAction {
 		else if (standardForm instanceof PasswordForm) {
 
 			standardForm.setVisible(false);
-
-		// TODO Auto-generated method stub
-		
-		if(standardForm instanceof GenerateKeyPairForm){
-			
-		}
-		
-		if(standardForm instanceof GenerateCertificateForm){
-			
-		}
 
 			new GenerateCertificateSucess().setVisible(true);
 		}

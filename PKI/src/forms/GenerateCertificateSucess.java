@@ -24,7 +24,7 @@ public class GenerateCertificateSucess extends JFrame{
 	}
     
     private void initGui() {
-    	JOptionPane.showMessageDialog(this, "Eggs are not supposed to be green.");
+    	JOptionPane.showMessageDialog(this, "Sucess.");
 		
 	}
 

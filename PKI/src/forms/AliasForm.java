@@ -2,6 +2,8 @@ package forms;
 
 import java.awt.Container;
 import java.awt.Dimension;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -20,7 +22,7 @@ public class AliasForm extends JFrame {
 		
 		setSize(new Dimension(300,100));
 		setLocationRelativeTo(null);
-		setTitle("Generate Key Pair");
+		setTitle("Alias Form");
 		//setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setExtendedState(NORMAL);
 		setResizable(false);
@@ -54,6 +56,29 @@ public class AliasForm extends JFrame {
 		panel2.add(btnCancel);
 		
 		panel.add(panel2);
+		
+		btnOk.addActionListener(new ActionListener() {
+			@SuppressWarnings("deprecation")
+			public void actionPerformed(ActionEvent e) {
+				
+					setVisible(false);
+					new PasswordForm().setVisible(true);			
+			
+
+			}
+		});
+
+		btnCancel.addActionListener(new ActionListener() {
+			@SuppressWarnings("deprecation")
+			public void actionPerformed(ActionEvent e) {
+				
+					setVisible(false);
+								
+			
+
+			}
+		});
+
 	}
 
 }

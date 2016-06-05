@@ -3,12 +3,15 @@ package forms;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
-
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.LayoutManager;
-import javax.swing.BoxLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.security.KeyStore;
+import java.security.KeyStoreException;
 
+import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
@@ -158,7 +161,27 @@ public class GenerateCertificateForm extends JFrame {
 		panel.add(panel4);
 		
 		
+				btnOk.addActionListener(new ActionListener() {
+					@SuppressWarnings("deprecation")
+					public void actionPerformed(ActionEvent e) {
+						
+							setVisible(false);
+							new AliasForm().setVisible(true);			
+					
 
+					}
+				});
+
+				btnCancel.addActionListener(new ActionListener() {
+					@SuppressWarnings("deprecation")
+					public void actionPerformed(ActionEvent e) {
+						
+							setVisible(false);
+										
+					
+
+					}
+				});
 		
 	}
 

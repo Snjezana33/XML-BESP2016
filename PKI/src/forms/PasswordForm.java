@@ -2,6 +2,8 @@ package forms;
 
 import java.awt.Container;
 import java.awt.Dimension;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -59,6 +61,31 @@ public class PasswordForm extends JFrame {
 		
 		panel.add(btnOk);
 		panel.add(btnCancel);
+		
+
+		btnOk.addActionListener(new ActionListener() {
+			@SuppressWarnings("deprecation")
+			public void actionPerformed(ActionEvent e) {
+				
+					setVisible(false);
+					new GenerateCertificateSucess().setVisible(true);		
+			
+
+			}
+		});
+
+		btnCancel.addActionListener(new ActionListener() {
+			@SuppressWarnings("deprecation")
+			public void actionPerformed(ActionEvent e) {
+				
+					setVisible(false);
+								
+			
+
+			}
+		});
+
+		
 	}
 
 }
