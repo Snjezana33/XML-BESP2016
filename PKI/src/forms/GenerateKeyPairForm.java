@@ -25,7 +25,15 @@ import org.bouncycastle.asn1.x500.style.BCStyle;
 import actions.CancelAction;
 import actions.OkAction;
 
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 503ac6a8ba58c96bdfddd7a93e9c3893677ef705
+>>>>>>> f7f4fd398361fae3ac4b15d320bdd91acab7fefd
 public class GenerateKeyPairForm extends JFrame{
 
 	private static final long serialVersionUID = -572497822506860145L;
@@ -147,9 +155,20 @@ public class GenerateKeyPairForm extends JFrame{
 						try {
 							KeyStore.getInstance(textRSA);
 							System.out.println(KeyStore.getInstance(textRSA));
+<<<<<<< HEAD
 							setVisible(false);
 							new GenerateCertificateForm().dispose();
 
+=======
+<<<<<<< HEAD
+							//setVisible(false);
+							//new GenerateCertificateForm().setVisible(true);
+							
+=======
+							setVisible(false);
+							new GenerateCertificateForm().dispose();
+>>>>>>> 503ac6a8ba58c96bdfddd7a93e9c3893677ef705
+>>>>>>> f7f4fd398361fae3ac4b15d320bdd91acab7fefd
 							
 							
 						} catch (KeyStoreException e1) {
@@ -164,7 +183,15 @@ public class GenerateKeyPairForm extends JFrame{
 		});
 		
 		
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+//	btnOk.addActionListener(new A)
+=======
+//		btnOk.addActionListener(new A)
+>>>>>>> 503ac6a8ba58c96bdfddd7a93e9c3893677ef705
+>>>>>>> f7f4fd398361fae3ac4b15d320bdd91acab7fefd
 
 	/*	ItemListener itemListener = new ItemListener() {
 			public void itemStateChanged(ItemEvent itemEvent) {

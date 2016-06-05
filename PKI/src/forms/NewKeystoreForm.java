@@ -99,9 +99,17 @@ public class NewKeystoreForm extends JFrame {
 		label.setText("Select the type of the new keystore: ");
 		// label.setAlignmentX(LEFT_ALIGNMENT);
 
+<<<<<<< HEAD
 
 		
 		final JButton btnOk= new JButton("OK");
+=======
+<<<<<<< HEAD
+		final JButton btnOk = new JButton("OK");
+=======
+		final JButton btn1 = new JButton("OK");
+>>>>>>> 503ac6a8ba58c96bdfddd7a93e9c3893677ef705
+>>>>>>> f7f4fd398361fae3ac4b15d320bdd91acab7fefd
 		final JButton btn2 = new JButton(new CancelAction(this));
 
 		// btn1.setBounds(250, 250, 200, 100);
@@ -142,11 +150,19 @@ public class NewKeystoreForm extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				// Execute when button is pressed
 				//System.out.println("You clicked the button");
+<<<<<<< HEAD
 
 				btnOk.addActionListener(new ActionListener() {
 
 		
 
+=======
+<<<<<<< HEAD
+				btnOk.addActionListener(new ActionListener() {
+=======
+				btn1.addActionListener(new ActionListener() {
+>>>>>>> 503ac6a8ba58c96bdfddd7a93e9c3893677ef705
+>>>>>>> f7f4fd398361fae3ac4b15d320bdd91acab7fefd
 					public void actionPerformed(ActionEvent e) {
 						//System.out.println("ok");
 						try {
@@ -156,7 +172,11 @@ public class NewKeystoreForm extends JFrame {
 							KeyStoreWriter.loadKeyStore("./data/marija.jks", null);
 							setVisible(false);
 							
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+>>>>>>> f7f4fd398361fae3ac4b15d320bdd91acab7fefd
 						} catch (KeyStoreException e1) {
 							// TODO Auto-generated catch block
 							e1.printStackTrace();
@@ -181,12 +201,21 @@ public class NewKeystoreForm extends JFrame {
 							KeyStore.getInstance(text2);
 							KeyStoreReader.readKeyStore();
 							KeyStoreWriter.loadKeyStore("./data/marija.jks", null);
+<<<<<<< HEAD
 
+=======
+=======
+>>>>>>> 503ac6a8ba58c96bdfddd7a93e9c3893677ef705
+>>>>>>> f7f4fd398361fae3ac4b15d320bdd91acab7fefd
 							
 						} catch (KeyStoreException e1) {
 							// TODO Auto-generated catch block
 							e1.printStackTrace();
 						}
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> f7f4fd398361fae3ac4b15d320bdd91acab7fefd
 						KeyStoreReader.readKeyStore();
 					}
 				});
@@ -235,12 +264,21 @@ public class NewKeystoreForm extends JFrame {
 							// TODO Auto-generated catch block
 							e1.printStackTrace();
 						}
+<<<<<<< HEAD
 
+=======
+=======
+>>>>>>> 503ac6a8ba58c96bdfddd7a93e9c3893677ef705
+>>>>>>> f7f4fd398361fae3ac4b15d320bdd91acab7fefd
 						
 					}
 				});
 
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+>>>>>>> f7f4fd398361fae3ac4b15d320bdd91acab7fefd
 			}
 
 		});
@@ -286,6 +324,36 @@ public class NewKeystoreForm extends JFrame {
 					}
 				});
 
+<<<<<<< HEAD
+=======
+			}
+
+		});
+
+		button7.addActionListener(new ActionListener() {
+
+		public void actionPerformed(ActionEvent e) {
+				// Execute when button is pressed
+				System.out.println("You clicked the button");
+				btnOk.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						System.out.println("ok");
+						try {
+							KeyStore.getInstance(text7);
+							KeyStoreReader.readKeyStore();
+							KeyStoreWriter.loadKeyStore("./data/marija.jks", null);
+							
+						} catch (KeyStoreException e1) {
+							// TODO Auto-generated catch block
+							e1.printStackTrace();
+						}
+					}
+				});
+			}
+
+		});
+=======
+>>>>>>> f7f4fd398361fae3ac4b15d320bdd91acab7fefd
 			}
 
 		});
@@ -458,7 +526,11 @@ public class NewKeystoreForm extends JFrame {
 //			}
 //
 //		});
+<<<<<<< HEAD
 
+=======
+>>>>>>> 503ac6a8ba58c96bdfddd7a93e9c3893677ef705
+>>>>>>> f7f4fd398361fae3ac4b15d320bdd91acab7fefd
 
 		
 
