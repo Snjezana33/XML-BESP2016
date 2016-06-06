@@ -3,99 +3,39 @@ package actions;
 import java.awt.event.ActionEvent;
 
 import javax.swing.AbstractAction;
-<<<<<<< HEAD
+
 
 import javax.swing.JButton;
-
-=======
-<<<<<<< HEAD
-import javax.swing.JButton;
-=======
-<<<<<<< HEAD
->>>>>>> 3a233234e865207f6125f97711e1a27161c70b73
-import javax.swing.JButton;
-import javax.swing.JFrame;
 
 import forms.AliasForm;
 import forms.GenerateCertificateForm;
 import forms.GenerateCertificateSucess;
 
-import javax.swing.JDialog;
-<<<<<<< HEAD
 
 import javax.swing.JFrame;
 
-import forms.GenerateCertificateForm;
-
-import forms.GenerateCertificateSucess;
-
-
-=======
->>>>>>> f7f4fd398361fae3ac4b15d320bdd91acab7fefd
-import javax.swing.JFrame;
-
-import forms.GenerateCertificateForm;
-<<<<<<< HEAD
-import forms.GenerateCertificateSucess;
-=======
->>>>>>> 503ac6a8ba58c96bdfddd7a93e9c3893677ef705
->>>>>>> f7f4fd398361fae3ac4b15d320bdd91acab7fefd
->>>>>>> 3a233234e865207f6125f97711e1a27161c70b73
 import forms.GenerateKeyPairForm;
 import forms.PasswordForm;
 
 public class OkAction extends AbstractAction {
-<<<<<<< HEAD
-
-
-=======
-<<<<<<< HEAD
-
-=======
-<<<<<<< HEAD
->>>>>>> f7f4fd398361fae3ac4b15d320bdd91acab7fefd
->>>>>>> 3a233234e865207f6125f97711e1a27161c70b73
 
 	private JFrame standardForm;
 	private JButton btnOk;
 
-<<<<<<< HEAD
 
+
+	
 	
 	
 	
 	public OkAction(JFrame standardForm){
 
-=======
-<<<<<<< HEAD
-	
-	public OkAction(JFrame standardForm){
-
-=======
-	public OkAction(JFrame standardForm) {
-=======
-	
-	
-	private JFrame standardForm;
-	
-	public OkAction(JFrame standardForm){
->>>>>>> 503ac6a8ba58c96bdfddd7a93e9c3893677ef705
->>>>>>> f7f4fd398361fae3ac4b15d320bdd91acab7fefd
->>>>>>> 3a233234e865207f6125f97711e1a27161c70b73
 		putValue(NAME, "OK");
 		this.standardForm = standardForm;
 	}
 
 	public void actionPerformed(ActionEvent arg0) {
-<<<<<<< HEAD
 
-
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> f7f4fd398361fae3ac4b15d320bdd91acab7fefd
->>>>>>> 3a233234e865207f6125f97711e1a27161c70b73
 		standardForm.setVisible(false);
 
 		if (standardForm instanceof GenerateKeyPairForm) {
@@ -120,28 +60,9 @@ public class OkAction extends AbstractAction {
 		else if (standardForm instanceof PasswordForm) {
 
 			standardForm.setVisible(false);
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-
-=======
-=======
->>>>>>> f7f4fd398361fae3ac4b15d320bdd91acab7fefd
 		// TODO Auto-generated method stub
 		
-		if(standardForm instanceof GenerateKeyPairForm){
-			
-		}
-		
-		if(standardForm instanceof GenerateCertificateForm){
-			
-		}
-<<<<<<< HEAD
-=======
->>>>>>> 503ac6a8ba58c96bdfddd7a93e9c3893677ef705
->>>>>>> f7f4fd398361fae3ac4b15d320bdd91acab7fefd
->>>>>>> 3a233234e865207f6125f97711e1a27161c70b73
-
+	
 			new GenerateCertificateSucess().setVisible(true);
 		}
 	}

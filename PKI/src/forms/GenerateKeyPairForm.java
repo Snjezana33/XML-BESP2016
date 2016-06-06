@@ -25,25 +25,12 @@ import org.bouncycastle.asn1.x500.style.BCStyle;
 import actions.CancelAction;
 import actions.OkAction;
 
-<<<<<<< HEAD
-
-=======
-<<<<<<< HEAD
-
-=======
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 503ac6a8ba58c96bdfddd7a93e9c3893677ef705
->>>>>>> f7f4fd398361fae3ac4b15d320bdd91acab7fefd
->>>>>>> 3a233234e865207f6125f97711e1a27161c70b73
-public class GenerateKeyPairForm extends JFrame{
+public class GenerateKeyPairForm extends JFrame {
 
 	private static final long serialVersionUID = -572497822506860145L;
 
 	public static GenerateKeyPairForm instance;
-	
+
 	private JButton btnOk;
 
 	public GenerateKeyPairForm() {
@@ -108,7 +95,7 @@ public class GenerateKeyPairForm extends JFrame{
 		panel2.add(size);
 
 		panel.add(panel2);
-		
+
 		btnOk = new JButton(new OkAction(this));
 		JButton btnCancel = new JButton(new CancelAction(this));
 
@@ -128,14 +115,13 @@ public class GenerateKeyPairForm extends JFrame{
 						System.out.println("ok");
 						try {
 							KeyStore.getInstance(textDSA);
-						//	KeyStoreReader.readKeyStore();
-						//	KeyStoreWriter.loadKeyStore("./data/marija.jks",
-						//			null);
-							
+							// KeyStoreReader.readKeyStore();
+							// KeyStoreWriter.loadKeyStore("./data/marija.jks",
+							// null);
+
 							setVisible(false);
 							new GenerateCertificateForm().setVisible(true);
-						
-							
+
 						} catch (KeyStoreException e1) {
 							// TODO Auto-generated catch block
 							e1.printStackTrace();
@@ -151,36 +137,19 @@ public class GenerateKeyPairForm extends JFrame{
 
 			public void actionPerformed(ActionEvent e) {
 				// Execute when button is pressed
-				//System.out.println("You clicked the button");
+				// System.out.println("You clicked the button");
 				btnOk.addActionListener(new ActionListener() {
 					@SuppressWarnings("deprecation")
 					public void actionPerformed(ActionEvent e) {
-						//System.out.println("ok");
+						// System.out.println("ok");
 						try {
 							KeyStore.getInstance(textRSA);
-<<<<<<< HEAD
 
 							setVisible(false);
-							new GenerateCertificateForm().setVisible(true);			
-=======
+							new GenerateCertificateForm().setVisible(true);
+
 							System.out.println(KeyStore.getInstance(textRSA));
-<<<<<<< HEAD
-							setVisible(false);
-							new GenerateCertificateForm().dispose();
 
-=======
-<<<<<<< HEAD
-							//setVisible(false);
-							//new GenerateCertificateForm().setVisible(true);
-							
-=======
-							setVisible(false);
-							new GenerateCertificateForm().dispose();
->>>>>>> 503ac6a8ba58c96bdfddd7a93e9c3893677ef705
->>>>>>> f7f4fd398361fae3ac4b15d320bdd91acab7fefd
-							
-							
->>>>>>> 3a233234e865207f6125f97711e1a27161c70b73
 						} catch (KeyStoreException e1) {
 							// TODO Auto-generated catch block
 							e1.printStackTrace();
@@ -191,80 +160,56 @@ public class GenerateKeyPairForm extends JFrame{
 			}
 
 		});
-		
-		
-<<<<<<< HEAD
 
+		/*
+		 * ItemListener itemListener = new ItemListener() { public void
+		 * itemStateChanged(ItemEvent itemEvent) { int state =
+		 * itemEvent.getStateChange(); System.out.println((state ==
+		 * ItemEvent.SELECTED) ? "Selected" : "Deselected");
+		 * System.out.println("Item: " + itemEvent.getItem()); ItemSelectable is
+		 * = itemEvent.getItemSelectable(); System.out.println(", Selected: " +
+		 * selectedString(is)); } }; size.addItemListener(itemListener);
+		 */
 
-//	btnOk.addActionListener(new A)
+		// JComboBox comboBox = new JComboBox(names);
+		//
+		// Create an ActionListener for the JComboBox component.
+		//
+		size.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
+				//
+				// Get the source of the component, which is our combo
+				// box.
+				//
+				JComboBox size = (JComboBox) event.getSource();
 
-=======
-<<<<<<< HEAD
+				//
+				// Print the selected items and the action command.
+				//
+				Object selected = size.getSelectedItem();
+				System.out.println("Selected Item  = " + selected);
+				String command = event.getActionCommand();
+				System.out.println("Action Command = " + command);
 
-=======
-<<<<<<< HEAD
-//	btnOk.addActionListener(new A)
-=======
-//		btnOk.addActionListener(new A)
->>>>>>> 503ac6a8ba58c96bdfddd7a93e9c3893677ef705
->>>>>>> f7f4fd398361fae3ac4b15d320bdd91acab7fefd
->>>>>>> 3a233234e865207f6125f97711e1a27161c70b73
-
-	/*	ItemListener itemListener = new ItemListener() {
-			public void itemStateChanged(ItemEvent itemEvent) {
-				int state = itemEvent.getStateChange();
-				System.out.println((state == ItemEvent.SELECTED) ? "Selected"
-						: "Deselected");
-				System.out.println("Item: " + itemEvent.getItem());
-				ItemSelectable is = itemEvent.getItemSelectable();
-				System.out.println(", Selected: " + selectedString(is));
+				//
+				// Detect whether the action command is "comboBoxEdited"
+				// or "comboBoxChanged"
+				//
+				if ("comboBoxEdited".equals(command)) {
+					System.out.println("User has typed a string in "
+							+ "the combo box.");
+				} else if ("comboBoxChanged".equals(command)) {
+					System.out.println("User has selected an item "
+							+ "from the combo box.");
+				}
 			}
-		};
-		size.addItemListener(itemListener);*/
-		
-		
-	     // JComboBox comboBox = new JComboBox(names);
-	        //
-	        // Create an ActionListener for the JComboBox component.
-	        //
-	        size.addActionListener(new ActionListener() {
-	            public void actionPerformed(ActionEvent event) {
-	                //
-	                // Get the source of the component, which is our combo
-	                // box.
-	                //
-	                JComboBox size = (JComboBox) event.getSource();
+		});
 
-	                //
-	                // Print the selected items and the action command.
-	                //
-	                Object selected = size.getSelectedItem();
-	                System.out.println("Selected Item  = " + selected);
-	                String command = event.getActionCommand();
-	                System.out.println("Action Command = " + command);
-
-	                //
-	                // Detect whether the action command is "comboBoxEdited"
-	                // or "comboBoxChanged"
-	                //
-	                if ("comboBoxEdited".equals(command)) {
-	                    System.out.println("User has typed a string in " +
-	                            "the combo box.");
-	                } else if ("comboBoxChanged".equals(command)) {
-	                    System.out.println("User has selected an item " +
-	                            "from the combo box.");
-	                }
-	            }
-	        });
-		
-		
-		
-		
 	}
 
-	/*static private String selectedString(ItemSelectable is) {
-		Object selected[] = is.getSelectedObjects();
-		return ((selected.length == 0) ? "null" : (String) selected[0]);
-	}
-*/
+	/*
+	 * static private String selectedString(ItemSelectable is) { Object
+	 * selected[] = is.getSelectedObjects(); return ((selected.length == 0) ?
+	 * "null" : (String) selected[0]); }
+	 */
 }
