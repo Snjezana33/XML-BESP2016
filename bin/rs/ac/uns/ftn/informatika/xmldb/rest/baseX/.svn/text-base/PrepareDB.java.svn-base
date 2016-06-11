@@ -1,0 +1,356 @@
+package rs.ac.uns.ftn.informatika.xmldb.rest.baseX;
+
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.util.ResourceBundle;
+
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
+import javax.xml.bind.Unmarshaller;
+import javax.xml.parsers.ParserConfigurationException;
+
+import org.apache.commons.io.IOUtils;
+import org.basex.BaseXHTTP;
+import org.xml.sax.SAXException;
+
+import rs.ac.uns.ftn.informatika.webservice.entities.banka.Banka;
+import rs.ac.uns.ftn.informatika.webservice.entities.centralna_banka.CentralnaBanka;
+import rs.ac.uns.ftn.informatika.webservice.entities.firma.Firma;
+
+public class PrepareDB {
+	// za banku1
+	private static String oznaka;
+	private static String swift;
+	private static int brStavkiPreseka;
+	private static String obracunskiRacun;
+	private static String adresaBaze;
+	private static String adresaCb;
+
+	// za banku2
+	public static String oznaka2;
+	private static String swift2;
+	private static int brStavkiPreseka2;
+	private static String obracunskiRacun2;
+	public static String adresaBaze2;
+	private static String adresaCb2;
+
+	// za firmu1
+	private static String naziv;
+	private static String pib;
+	private static String nazivBanke;
+	private static String adresaBazeFirme;
+	private static String adresaServisa;
+
+	// za firmu2
+	private static String naziv2;
+	private static String pib2;
+	private static String nazivBanke2;
+	private static String adresaBazeFirme2;
+	private static String adresaServisa2;
+
+	// za CB
+	private static String adresaBazeCB;
+
+	
+	 
+	
+	public static final String REST_URL = "http://localhost:8084/BaseX75/rest/";
+	
+
+	public static final String bank1 = ("..\\XWS-BSEP_Projekat\\data\\entities\\banka1.xml");
+	public static final String b1 = "banka1.xml";
+	public static final String bank2 = ("..\\XWS-BSEP_Projekat\\data\\entities\\banka2.xml");
+	public static final String b2 = "banka2.xml";
+
+	public static final String firm1 = ("..\\XWS-BSEP_Projekat\\data\\entities\\firma1.xml");
+	public static final String f1 = "firma1.xml";
+	public static final String firm2 = ("..\\XWS-BSEP_Projekat\\data\\entities\\firma2.xml");
+	public static final String f2 = "firma2.xml";
+
+	public static final String cb = ("..\\XWS-BSEP_Projekat\\data\\entities\\centralna_banka.xml");
+
+	/**
+	 * Treba sva 3 tomeea da budu pokrenuti
+	 * Pristup konkretnom resursu videti u readme.txt
+	 */
+	public static void main(String[] args) {
+
+		BaseXHTTP http = null;
+
+		// Startovanje baze podataka za B1F2
+		try {
+			if (!RESTUtil.isRunning(REST_URL))
+				http = new BaseXHTTP("-Uadmin", "-Padmin");
+
+			// poziv metoda
+			// createSchemas();
+			// users();
+
+			initializeBank1(bank1, b1);
+			initializeFirm2(firm2, f2);
+			
+			initializeBank2(bank2, b2);
+			initializeFirm1(firm1, f1);
+			
+			initializeCB(cb);
+			
+			//seme za cuvanje xml sa  potpisom
+			RESTUtil.createSchema(REST_URL, "NalogZaPlacanje");
+			RESTUtil.createSchema(REST_URL, "Faktura");
+			RESTUtil.createSchema(REST_URL, "RTGS");
+			RESTUtil.createSchema(REST_URL, "Kliring");
+			RESTUtil.createSchema(REST_URL, "Presek");
+			
+			// Zaustavljanje baze
+			if (http instanceof BaseXHTTP)
+				http.stop();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		
+	
+	}
+
+	private static void initializeBank1(String locationXML, String name) {
+
+		try {
+
+			File file = new File(locationXML);
+			InputStream configStream = new FileInputStream(file);
+			System.out.println(configStream);
+			Banka banka = loadBanka(configStream);
+			// naziv = banka.getNaziv().trim();
+			oznaka = banka.getOznaka().trim();
+			swift = banka.getSwift().trim();
+			brStavkiPreseka = banka.getBrStavkiPreseka().intValue();
+			obracunskiRacun = banka.getObracunskiRacun().trim();
+			adresaBaze = banka.getAdresaBaze().trim();
+			adresaCb = banka.getAdresaServisaCb().trim();
+			configStream.close();
+
+			configStream = new FileInputStream(file);
+			RESTUtil.createSchema(adresaBaze, "banka" + oznaka);
+			RESTUtil.createResource(adresaBaze, "banka" + oznaka, name,
+					configStream);
+			configStream.close();
+
+			System.out.println("<banka-" + oznaka
+					+ "> Banka service initialized.");
+
+		} catch (Exception e) {
+			e.printStackTrace();
+
+		}
+
+	}
+
+	private static void initializeBank2(String locationXML, String name) {
+
+		try {
+
+			File file = new File(locationXML);
+			InputStream configStream = new FileInputStream(file);
+			System.out.println(configStream);
+			Banka banka = loadBanka(configStream);
+			// naziv = banka.getNaziv().trim();
+			oznaka2 = banka.getOznaka().trim();
+			swift2 = banka.getSwift().trim();
+			brStavkiPreseka2 = banka.getBrStavkiPreseka().intValue();
+			obracunskiRacun2 = banka.getObracunskiRacun().trim();
+			adresaBaze2 = banka.getAdresaBaze().trim();
+			adresaCb2 = banka.getAdresaServisaCb().trim();
+			configStream.close();
+
+			configStream = new FileInputStream(file);
+			RESTUtil.createSchema(adresaBaze2, "banka" + oznaka2);
+			RESTUtil.createResource(adresaBaze2, "banka" + oznaka2, name,
+					configStream);
+			configStream.close();
+
+			System.out.println("<banka-" + oznaka + "> Banka DB created.");
+
+		} catch (Exception e) {
+			e.printStackTrace();
+
+		}
+
+	}
+
+	private static void initializeFirm1(String locationXML, String name) {
+		try {
+			File file = new File(locationXML);
+			InputStream configStream = new FileInputStream(file);
+			Firma firma = loadFirma(configStream);
+			naziv = firma.getNaziv().trim();
+			pib = firma.getPib().trim();
+			nazivBanke = firma.getBanka().getNaziv().trim();
+			adresaBazeFirme = firma.getAdresaBaze().trim();
+			adresaServisa = firma.getBanka().getAdresaServisa();
+			configStream.close();
+			System.out.println(naziv);
+			System.out.println(pib);
+
+			configStream = new FileInputStream(file);
+			RESTUtil.createSchema(adresaBazeFirme, "firma" + pib);
+			RESTUtil.createResource(adresaBazeFirme, "firma" + pib, "firma1.xml",
+					configStream);
+			configStream.close();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+
+		}
+
+		System.out.println(" Firma1 DB created.");
+	}
+
+	private static void initializeFirm2(String locationXML, String name) {
+		try {
+			File file = new File(locationXML);
+			InputStream configStream = new FileInputStream(file);
+			Firma firma = loadFirma(configStream);
+			naziv2 = firma.getNaziv().trim();
+			pib2 = firma.getPib().trim();
+			nazivBanke2 = firma.getBanka().getNaziv().trim();
+			adresaBazeFirme2 = firma.getAdresaBaze().trim();
+			adresaServisa2 = firma.getBanka().getAdresaServisa();
+			configStream.close();
+			System.out.println(naziv2);
+			System.out.println(adresaBazeFirme2);
+
+			configStream = new FileInputStream(file);
+			RESTUtil.createSchema(adresaBazeFirme2, "firma" + pib2);
+			RESTUtil.createResource(adresaBazeFirme2, "firma" + pib2, "firma2.xml",
+					configStream);
+			configStream.close();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+
+		}
+
+		System.out.println(" Firma2 DB created.");
+	}
+
+	private static void initializeCB(String locationXML) {
+		try {
+			File file = new File(locationXML);
+			InputStream configStream = new FileInputStream(file);
+			CentralnaBanka cb = loadCentralnaBanka(configStream);
+
+			adresaBazeCB = cb.getAdresaBaze().trim();
+			System.out.println(adresaBazeCB);
+
+			configStream = new FileInputStream(file);
+			RESTUtil.createSchema(cb.getAdresaBaze().trim(), "centralna_banka");
+			RESTUtil.createResource(cb.getAdresaBaze().trim(),
+					"centralna_banka", "centralna_banka.xml", configStream);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+
+		}
+
+		System.out.println(" Centralna banka DB created");
+	}
+//UCITAVANJE
+	public static Banka loadBanka(InputStream configStream)
+			throws ParserConfigurationException, SAXException, IOException,
+			JAXBException {
+		JAXBContext ctx = JAXBContext.newInstance(Banka.class);
+		Unmarshaller unmarshaller = ctx.createUnmarshaller();
+		Banka banka = (Banka) unmarshaller.unmarshal(configStream);
+		return banka;
+	}
+
+	private static Firma loadFirma(InputStream configStream)
+			throws ParserConfigurationException, SAXException, IOException,
+			JAXBException {
+		JAXBContext ctx = JAXBContext.newInstance(Firma.class);
+		Unmarshaller unmarshaller = ctx.createUnmarshaller();
+		Firma firma = (Firma) unmarshaller.unmarshal(configStream);
+		return firma;
+	}
+
+	private static CentralnaBanka loadCentralnaBanka(InputStream configStream)
+			throws ParserConfigurationException, SAXException, IOException,
+			JAXBException {
+		JAXBContext ctx = JAXBContext.newInstance(CentralnaBanka.class);
+		Unmarshaller unmarshaller = ctx.createUnmarshaller();
+		CentralnaBanka cb = (CentralnaBanka) unmarshaller
+				.unmarshal(configStream);
+		configStream.close();
+		return cb;
+	}
+//UPDATE
+	private void updateDatabase1(Banka banka) throws Exception {
+		JAXBContext ctx = JAXBContext.newInstance(Banka.class);
+		Marshaller marshaller = ctx.createMarshaller();
+		HttpURLConnection conn = RESTUtil.getConnection(adresaBaze, "banka" + oznaka, "banka1.xml");
+		OutputStream os = new BufferedOutputStream(conn.getOutputStream());
+		marshaller.marshal(banka, os);
+		IOUtils.closeQuietly(os);
+		conn.getResponseCode();
+		conn.disconnect();
+		System.out.println("<banka-" + oznaka + "> DB updated.");
+	}
+
+	private void updateDatabase2(Banka banka) throws Exception {
+		JAXBContext ctx = JAXBContext.newInstance(Banka.class);
+		Marshaller marshaller = ctx.createMarshaller();
+		HttpURLConnection conn = RESTUtil.getConnection(adresaBaze2, "banka" + oznaka, "banka2.xml");
+		OutputStream os = new BufferedOutputStream(conn.getOutputStream());
+		marshaller.marshal(banka, os);
+		IOUtils.closeQuietly(os);
+		conn.getResponseCode();
+		conn.disconnect();
+		System.out.println("<banka-" + oznaka + "> DB updated.");
+	}
+	
+	private void updateDatabaseF1(Firma firma) throws Exception {
+		JAXBContext ctx = JAXBContext.newInstance(Firma.class);
+		Marshaller marshaller = ctx.createMarshaller();
+		HttpURLConnection conn = RESTUtil.getConnection(adresaBazeFirme, "firma" + pib, "firma1.xml");
+		OutputStream os = new BufferedOutputStream(conn.getOutputStream());
+		marshaller.marshal(firma, os);
+		IOUtils.closeQuietly(os);
+		conn.getResponseCode();
+		//RESTUtil.printResponse(conn);
+		conn.disconnect();
+		System.out.println("*** DB F1 updated ***");
+	}
+	
+	private void updateDatabaseF2(Firma firma) throws Exception {
+		JAXBContext ctx = JAXBContext.newInstance(Firma.class);
+		Marshaller marshaller = ctx.createMarshaller();
+		HttpURLConnection conn = RESTUtil.getConnection(adresaBazeFirme2, "firma" + pib2, "firma2.xml");
+		OutputStream os = new BufferedOutputStream(conn.getOutputStream());
+		marshaller.marshal(firma, os);
+		IOUtils.closeQuietly(os);
+		conn.getResponseCode();
+		//RESTUtil.printResponse(conn);
+		conn.disconnect();
+		System.out.println("*** DB F2 updated ***");
+	}
+	
+	private void updateDatabaseCB(CentralnaBanka cb) throws Exception {
+		JAXBContext ctx = JAXBContext.newInstance(CentralnaBanka.class);
+		Marshaller marshaller = ctx.createMarshaller();
+		HttpURLConnection conn = RESTUtil.getConnection(cb.getAdresaBaze().trim(), "centralna_banka",
+				"centralna_banka.xml");
+		OutputStream out = conn.getOutputStream();
+		marshaller.marshal(cb, out);
+		IOUtils.closeQuietly(out);
+		conn.getResponseCode();
+		conn.disconnect();
+		System.out.println("*** DB CB updated ***");
+	}
+}

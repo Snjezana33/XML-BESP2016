@@ -1,0 +1,17 @@
+#za buildF1B2.xml
+entity=C:\\data\\entity\\banka2.xml
+resurs =banka2.xml
+keystore=C:\\data\\keystore\\banka2.jks
+alias=banka2
+entityFirma=C:\\data\\entity\\firma1.xml
+resursFirma=firma1.xml
+
+
+
+#za buildF2B1CB.xml
+#entity= C:\\data\\entity\\banka1.xml
+#resurs =banka1.xml
+#keystore=C:\\data\\keystore\\banka1.jks
+#alias=banka1
+#entityFirma=C:\\data\\entity\\firma2.xml
+#resursFirma=firma2.xml
